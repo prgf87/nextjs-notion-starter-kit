@@ -1,4 +1,5 @@
 import * as React from 'react'
+import Image from 'next/image'
 
 import * as types from '@/lib/types'
 
@@ -27,7 +28,7 @@ export const Page404: React.FC<types.PageProps> = ({ site, pageId, error }) => {
             )
           )}
 
-          <img
+          <Image
             src='/404.png'
             alt='404 Not Found'
             className={styles.errorImage}
