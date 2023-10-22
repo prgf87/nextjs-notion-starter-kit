@@ -278,7 +278,6 @@ export const NotionPage: React.FC<types.PageProps> = ({
               alt='search icon'
               width={30}
               height={30}
-              className='h-20 flex justify-center items-center'
             />
           </div>
         </div>
