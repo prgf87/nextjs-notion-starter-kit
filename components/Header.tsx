@@ -25,7 +25,7 @@ function Header({ block }) {
 
         {isSearchEnabled && <Search block={block} title={null} />}
 
-        <button className='space-x-2 z-10'>
+        <button className='btn space-x-2 z-10'>
           <Link
             href={'/'}
             className='px-2 py-1 bg-white text-pink-700 rounded-lg hover:bg-pink-500 hover:text-white hover:scale-105'

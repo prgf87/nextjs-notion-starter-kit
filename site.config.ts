@@ -2,7 +2,8 @@ import { siteConfig } from './lib/site-config'
 
 export default siteConfig({
   // the site's root Notion page (required)
-  rootNotionPageId: 'e600a555239945e3b856b3c27bc29d16', //TP ID
+  // rootNotionPageId: 'e600a555239945e3b856b3c27bc29d16', //OG TP ID
+  rootNotionPageId: '5b397c8c257543a88b188827525b6a99', //NEW TP ID
   // rootNotionPageId: '7875426197cf461698809def95960ebf', //Default ID
 
   // if you want to restrict pages to a single notion workspace (optional)

@@ -410,6 +410,8 @@
   font-weight: 600;
   margin-bottom: 20px;
   line-height: 1.2;
+  color: transparent;
+  /* display: none; */
 }
 
 .notion-h {
@@ -1152,7 +1154,7 @@ svg.notion-page-icon {
 }
 
 .notion-collection-header-title {
-  display: inline-flex;
+  display: none;
   align-items: center;
   font-size: 1.25em;
   line-height: 1.2;
@@ -2029,6 +2031,7 @@ svg.notion-page-icon {
   .notion-property-relation
   .notion-page-title-text {
   border-bottom: 1px solid;
+  /* color: white; */
 }
 
 .notion-page-title-text {
@@ -2040,6 +2043,7 @@ svg.notion-page-icon {
   overflow: hidden;
   text-overflow: ellipsis;
   font-weight: 500;
+  color: lightgray;
 }
 
 /* removes double underline with links */
