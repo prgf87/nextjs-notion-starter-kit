@@ -149,6 +149,7 @@ export const NotionPage: React.FC<types.PageProps> = ({
 }) => {
   const router = useRouter()
   const lite = useSearchParam('lite')
+  const [searchTerm, setSearchTerm] = React.useState('')
 
   const components = React.useMemo(
     () => ({
@@ -272,19 +273,27 @@ export const NotionPage: React.FC<types.PageProps> = ({
             to build healthier and happier relationships.
           </p>
           <div className='flex justify-center items-center'>
-            <input className='w-1/2 rounded-lg h-8 mt-4' />
-            <Image
-              src='/search1.svg'
-              alt='search icon'
-              width={30}
-              height={30}
+            <input
+              className='w-1/2 rounded-lg h-8 mt-4 text-black p-4'
+              value={searchTerm}
+              onChange={(e) => {
+                setSearchTerm(e.target.value)
+              }}
             />
+            <button className='h-full flex justify-center items-center ml-2 mt-4'>
+              <Image
+                src='/search1.svg'
+                alt='search icon'
+                width={30}
+                height={30}
+              />
+            </button>
           </div>
         </div>
       )}
       {isBlogPost && (
-        <div className='absolute top-[390px] left-0 right-0 text-center z-50 text-white'>
-          <p className='pb-4 text-5xl font-light underline underline-offset-3 decoration-slate-200'>
+        <div className='absolute top-[150px] left-0 right-0 text-center z-50  drop-shadow-xl '>
+          <p className='pb-4 text-5xl font-bold underline underline-offset-3 decoration-slate-900 text-slate-300 px-20 bg-black/70 mx-auto rounded-3xl'>
             {title}
           </p>
         </div>
