@@ -254,24 +254,26 @@ export const NotionPage: React.FC<types.PageProps> = ({
       />
       <Header block={block} />
       {!isBlogPost && (
-        <div className='pt-20 max-w-3xl lg:max-w-7xl mx-auto px-4 z-50 text-center text-white'>
+        <div className='pt-10 max-w-3xl lg:max-w-7xl mx-auto px-4 z-50 text-center text-white'>
           <h1 className='text-5xl text-pink-900 pb-4'>
             Talking Points for Life
           </h1>
-          <p>
-            How to answer life&apos;s toughest questions, draw boundaries, ask
-            for what you want, and more.
-          </p>
-          <p>
-            Too many people are left with little choice but to scroll through
-            Reddit threads and Quora posts when looking for advice on what to
-            say. Communication is tricky. We all bring our own biases, emotions
-            and histories to the table.
-          </p>
-          <p>
-            This site will help you navigate those tricky subjects, allowing you
-            to build healthier and happier relationships.
-          </p>
+          <div className='text-xl max-w-3xl mx-auto'>
+            <p>
+              How to answer life&apos;s toughest questions, draw boundaries, ask
+              for what you want, and more.
+            </p>
+            <p>
+              Too many people are left with little choice but to scroll through
+              Reddit threads and Quora posts when looking for advice on what to
+              say. Communication is tricky. We all bring our own biases,
+              emotions and histories to the table.
+            </p>
+            <p>
+              This site will help you navigate those tricky subjects, allowing
+              you to build healthier and happier relationships.
+            </p>
+          </div>
           <div className='flex justify-center items-center'>
             <input
               className='w-1/2 rounded-lg h-8 mt-4 text-black p-4'
@@ -289,40 +291,63 @@ export const NotionPage: React.FC<types.PageProps> = ({
               />
             </button>
           </div>
+          <NotionRenderer
+            bodyClassName={cs(
+              styles.notion,
+              pageId === site.rootNotionPageId && 'index-page'
+            )}
+            // darkMode={isDarkMode}
+            components={components}
+            recordMap={recordMap}
+            rootPageId={site.rootNotionPageId}
+            rootDomain={site.domain}
+            fullPage={!isLiteMode}
+            previewImages={!!recordMap.preview_images}
+            showCollectionViewDropdown={false}
+            showTableOfContents={showTableOfContents}
+            minTableOfContentsItems={minTableOfContentsItems}
+            defaultPageIcon={config.defaultPageIcon}
+            defaultPageCover={config.defaultPageCover}
+            defaultPageCoverPosition={config.defaultPageCoverPosition}
+            mapPageUrl={siteMapPageUrl}
+            mapImageUrl={mapImageUrl}
+            searchNotion={config.isSearchEnabled ? searchNotion : null}
+            pageAside={pageAside}
+            footer={footer}
+          />
         </div>
       )}
       {isBlogPost && (
         <div className='absolute top-[150px] left-0 right-0 text-center z-50  drop-shadow-xl '>
-          <p className='pb-4 text-5xl font-bold underline underline-offset-3 decoration-slate-900 text-slate-300 px-20 bg-black/70 mx-auto rounded-3xl'>
+          {/* <p className='pb-4 text-5xl font-bold underline underline-offset-3 decoration-slate-900 text-slate-300 px-20 bg-black/70 mx-auto rounded-3xl'>
             {title}
-          </p>
+          </p> */}
+          <NotionRenderer
+            bodyClassName={cs(
+              styles.notion,
+              pageId === site.rootNotionPageId && 'index-page'
+            )}
+            // darkMode={isDarkMode}
+            components={components}
+            recordMap={recordMap}
+            rootPageId={site.rootNotionPageId}
+            rootDomain={site.domain}
+            fullPage={!isLiteMode}
+            previewImages={!!recordMap.preview_images}
+            showCollectionViewDropdown={false}
+            showTableOfContents={showTableOfContents}
+            minTableOfContentsItems={minTableOfContentsItems}
+            defaultPageIcon={config.defaultPageIcon}
+            defaultPageCover={config.defaultPageCover}
+            defaultPageCoverPosition={config.defaultPageCoverPosition}
+            mapPageUrl={siteMapPageUrl}
+            mapImageUrl={mapImageUrl}
+            searchNotion={config.isSearchEnabled ? searchNotion : null}
+            pageAside={pageAside}
+            footer={footer}
+          />
         </div>
       )}
-
-      <NotionRenderer
-        bodyClassName={cs(
-          styles.notion,
-          pageId === site.rootNotionPageId && 'index-page'
-        )}
-        // darkMode={isDarkMode}
-        components={components}
-        recordMap={recordMap}
-        rootPageId={site.rootNotionPageId}
-        rootDomain={site.domain}
-        fullPage={!isLiteMode}
-        previewImages={!!recordMap.preview_images}
-        showCollectionViewDropdown={false}
-        showTableOfContents={showTableOfContents}
-        minTableOfContentsItems={minTableOfContentsItems}
-        defaultPageIcon={config.defaultPageIcon}
-        defaultPageCover={config.defaultPageCover}
-        defaultPageCoverPosition={config.defaultPageCoverPosition}
-        mapPageUrl={siteMapPageUrl}
-        mapImageUrl={mapImageUrl}
-        searchNotion={config.isSearchEnabled ? searchNotion : null}
-        pageAside={pageAside}
-        footer={footer}
-      />
     </div>
   )
 }
