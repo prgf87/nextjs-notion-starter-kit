@@ -794,6 +794,7 @@ svg.notion-page-icon {
 .notion-list li {
   padding: 6px 0;
   white-space: pre-wrap;
+  text-align: start;
 }
 
 .notion-asset-wrapper {
@@ -830,6 +831,7 @@ svg.notion-page-icon {
   word-break: break-word;
   padding: 3px 2px;
   margin: 1px 0;
+  text-align: start;
 }
 
 .notion-text:first-child {
@@ -1126,6 +1128,7 @@ svg.notion-page-icon {
   white-space: pre-wrap;
   word-break: break-word;
   width: 100%;
+  /* text-align: start; */
 }
 
 .notion-toggle {
