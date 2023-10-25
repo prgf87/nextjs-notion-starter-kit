@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "main": "index.tsx",
-  "description": "The perfect starter kit for building beautiful websites with Next.js and Notion.",
+  "description": "Talking Points for life's toughest questions.",
   "author": "Pedro Ferreira",
   "repository": "prgf87/talking-points-t3-nextjs-notion-x",
   "license": "MIT",
