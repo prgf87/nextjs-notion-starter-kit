@@ -242,9 +242,22 @@ export const NotionPage: React.FC<types.PageProps> = ({
     getPageProperty<string>('Description', block, recordMap) ||
     config.description
 
-  const clickHandler = (e) => {
+  const clickHandler = async (e) => {
     e.preventDefault()
-    searchNotion({ query: searchTerm, ancestorId: pageId })
+    const response = await fetch('/api/notion-search', {
+      method: 'POST',
+      mode: 'cors',
+      cache: 'no-cache',
+      credentials: 'same-origin',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      redirect: 'follow',
+      referrerPolicy: 'no-referrer',
+      body: JSON.stringify(searchTerm)
+    })
+    console.log(response, 'RESPONSE#####')
+    console.log(Object.keys(response), 'RESPONSE#####')
   }
 
   return (
