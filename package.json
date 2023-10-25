@@ -2,6 +2,7 @@
   "name": "talking-points-for-life",
   "version": "1.0.0",
   "private": true,
+  "main": "index.tsx",
   "description": "The perfect starter kit for building beautiful websites with Next.js and Notion.",
   "author": "Pedro Ferreira",
   "repository": "prgf87/talking-points-t3-nextjs-notion-x",

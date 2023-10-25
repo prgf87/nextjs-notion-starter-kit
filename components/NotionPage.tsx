@@ -244,6 +244,7 @@ export const NotionPage: React.FC<types.PageProps> = ({
 
   const clickHandler = async (e) => {
     e.preventDefault()
+    const data = { query: searchTerm, ancestorID: pageId }
     const response = await fetch('/api/notion-search', {
       method: 'POST',
       mode: 'cors',
@@ -252,9 +253,8 @@ export const NotionPage: React.FC<types.PageProps> = ({
       headers: {
         'Content-Type': 'application/json'
       },
-      redirect: 'follow',
       referrerPolicy: 'no-referrer',
-      body: JSON.stringify(searchTerm)
+      body: JSON.stringify(data)
     })
     console.log(response, 'RESPONSE#####')
     console.log(Object.keys(response), 'RESPONSE#####')
