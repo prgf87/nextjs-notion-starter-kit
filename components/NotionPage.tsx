@@ -242,6 +242,13 @@ export const NotionPage: React.FC<types.PageProps> = ({
     getPageProperty<string>('Description', block, recordMap) ||
     config.description
 
+  const clickHandler = (e) => {
+    e.preventDefault()
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    /*@ts-ignore*/
+    searchNotion(searchTerm)
+  }
+
   return (
     <div className='bg-gradient'>
       <PageHead
@@ -282,7 +289,10 @@ export const NotionPage: React.FC<types.PageProps> = ({
                 setSearchTerm(e.target.value)
               }}
             />
-            <button className='h-full flex justify-center items-center ml-2 mt-4'>
+            <button
+              onClick={(e) => clickHandler(e)}
+              className='h-full flex justify-center items-center ml-2 mt-4 shadow-xl'
+            >
               <Image
                 src='/search1.svg'
                 alt='search icon'
