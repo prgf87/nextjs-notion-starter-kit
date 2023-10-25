@@ -244,9 +244,7 @@ export const NotionPage: React.FC<types.PageProps> = ({
 
   const clickHandler = (e) => {
     e.preventDefault()
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    /*@ts-ignore*/
-    searchNotion(searchTerm)
+    searchNotion({ query: searchTerm, ancestorId: pageId })
   }
 
   return (
