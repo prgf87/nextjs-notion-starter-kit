@@ -18,7 +18,7 @@
     "**/.snapshots/": true,
     "**/bower_components": true,
     "**/.lock-wscript": true,
-    "build/Release": true,
+    "build/Release": false,
     "**/node_modules/": false,
     "**/jspm_packages/": true,
     "**/typings/": true,
