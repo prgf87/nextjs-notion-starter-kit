@@ -1266,6 +1266,7 @@ svg.notion-page-icon {
   padding-left: 8px;
   padding-right: 8px;
   border-right: 1px solid var(--fg-color-0);
+  display: none;
 }
 
 .notion-table-th:last-child .notion-table-view-header-cell-inner {

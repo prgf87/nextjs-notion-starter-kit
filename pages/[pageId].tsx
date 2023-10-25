@@ -2,7 +2,7 @@ import * as React from 'react'
 import { GetStaticProps } from 'next'
 
 import { NotionPage } from '@/components/NotionPage'
-import { domain, isDev } from '@/lib/config'
+import { domain } from '@/lib/config'
 import { getSiteMap } from '@/lib/get-site-map'
 import { resolveNotionPage } from '@/lib/resolve-notion-page'
 import { PageProps, Params } from '@/lib/types'
@@ -26,12 +26,12 @@ export const getStaticProps: GetStaticProps<PageProps, Params> = async (
 }
 
 export async function getStaticPaths() {
-  if (isDev) {
-    return {
-      paths: [],
-      fallback: true
-    }
-  }
+  // if (isDev) {
+  //   return {
+  //     paths: [],
+  //     fallback: true
+  //   }
+  // }
 
   const siteMap = await getSiteMap()
 
@@ -40,15 +40,15 @@ export async function getStaticPaths() {
       params: {
         pageId
       }
-    })),
+    }))
     // paths: [],
-    fallback: true
+    // fallback: true
   }
 
-  console.log(staticPaths.paths)
+  // console.log(staticPaths.paths)
   return staticPaths
 }
 
-export default function NotionDomainDynamicPage(props) {
+export default function NotionDomainDynamicPage(props: any) {
   return <NotionPage {...props} />
 }
